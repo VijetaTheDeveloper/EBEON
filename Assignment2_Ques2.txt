@@ -1,0 +1,74 @@
+Question 2: Follow naming convention rule
+ - Write a program to find the sum and product of all elements of an array.
+----------------------------------------------------------------------------------------------------------------------
+Ans-->
+package assignment2Ques2;
+import java.util.Scanner;
+
+class SumProdOfArray
+{
+	public void printSumProdDetails(int arraySize)
+	{
+		int i;
+		int sumOfArrayElemnts = 0, prodOfArrayElemnts = 1;
+		Scanner sc = new Scanner(System.in);
+		int arrayElemets[] = new int[arraySize];
+		for(i = 0;i < arraySize;i++)
+		{
+			System.out.print("Enter ["+i+"]th Array Elements :");
+			arrayElemets[i] = sc.nextInt();
+			sumOfArrayElemnts = sumOfArrayElemnts + arrayElemets[i];
+			if(arrayElemets[i] > 0)
+			{
+				prodOfArrayElemnts = prodOfArrayElemnts * arrayElemets[i];
+			}
+		}
+
+		System.out.println();
+		System.out.println("Addition and Product of All Array Elements Are Below :");
+		System.out.println("*****************************************************");
+		System.out.println("Total Addition of All Elements of an Array is : "+sumOfArrayElemnts);
+		
+		System.out.println("Product of All Elements of an Array is : "+prodOfArrayElemnts);
+
+	}
+}
+
+public class SumProductOfArray 
+{
+	public static void main(String args[]) 
+	{
+		int arraySize;
+		SumProdOfArray obj = new SumProdOfArray();
+		Scanner sc = new Scanner(System.in);
+		System.out.println("How Many Elements You Want To Enter");
+		arraySize = sc.nextInt();
+		if(arraySize < 0)
+		{
+			System.out.println("Enter Postive Array Size");
+		}
+		else
+		{
+			obj.printSumProdDetails(arraySize);
+		}
+	}
+}
+----------------------------------------------------------------------------------------------------------------------
+Output -->
+How Many Elements You Want To Enter
+10
+Enter [0]th Array Elements :1
+Enter [1]th Array Elements :2
+Enter [2]th Array Elements :3
+Enter [3]th Array Elements :5
+Enter [4]th Array Elements :7
+Enter [5]th Array Elements :6
+Enter [6]th Array Elements :9
+Enter [7]th Array Elements :0
+Enter [8]th Array Elements :2
+Enter [9]th Array Elements :3
+
+Addition and Product of All Array Elements Are Below :
+*****************************************************
+Total Addition of All Elements of an Array is : 38
+Product of All Elements of an Array is : 68040
