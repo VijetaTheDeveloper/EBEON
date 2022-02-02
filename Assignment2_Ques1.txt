@@ -1,0 +1,176 @@
+						Assignment 2
+---------------------------------------------------------------------------------------------------------------------
+
+Question 1: Follow naming convention rule
+ - Take 20 integer inputs from user and print the following:
+ - number of positive numbers
+ - number of negative numbers
+ - number of odd numbers
+ - number of even numbers
+ - number of 0s.
+----------------------------------------------------------------------------------------------------------------------
+Ans-->
+package assignment2Ques1;
+import java.util.Arrays;
+import java.util.Scanner;
+
+class PrintAllDetailsOfNum
+{
+	public void printDetailOfNum(int arraySize)
+	{
+		int i;
+		int countPositiv = 0, countNeg = 0, countEven = 0, countOdd = 0, countZeros = 0;
+		Scanner sc = new Scanner(System.in);
+		int intArray[] = new int[arraySize];
+		for(i = 0;i < arraySize; i++)
+		{
+			System.out.print("Enter ["+i+"]th Array Element: ");
+			intArray[i] = sc.nextInt();
+			
+		}
+		System.out.println("Entered Elements are : ");
+		System.out.println(Arrays.toString(intArray));
+		
+		System.out.println("\n");
+		System.out.print("Positive Numbers Found In An Array are : [");
+		for(i = 0;i < arraySize; i++)
+		{
+			if(intArray[i] > 0)
+			{
+				System.out.print(+intArray[i]+",");
+				countPositiv++;
+			}
+		}
+		System.out.println("]");
+		System.out.println("\n");
+		
+		System.out.print("Negative Numbers Found In An Array are : [");
+		for(i = 0;i < arraySize; i++)
+		{
+			if(intArray[i] < 0)
+			{
+				System.out.print(+intArray[i]+",");
+				countNeg++;
+			}
+		}
+		System.out.println("]");
+		System.out.println("\n");
+		
+	
+		System.out.print("Even Numbers Found In An Array are : [");
+		for(i = 0;i < arraySize; i++)
+		{
+			if(intArray[i] % 2 == 0)
+			{
+				System.out.print(+intArray[i]+",");
+				countEven++;
+			}
+		}
+		System.out.println("]");
+		System.out.println("\n");
+		
+		System.out.print("Odd Numbers Found In An Array are : [");
+		for(i = 0;i < arraySize; i++)
+		{
+			if(intArray[i] % 2 != 0)
+			{
+				System.out.print(+intArray[i]+",");
+				countOdd++;
+			}
+		}
+		System.out.println("]");
+		System.out.println("\n");
+		
+		System.out.print("Zero's Found In An Array are : [");
+		for(i = 0;i < arraySize; i++)
+		{
+			if(intArray[i] == 0)
+			{
+				System.out.print(+intArray[i]+",");
+				countZeros++;
+			}
+		}
+		System.out.println("]");
+		System.out.println("\n");
+		
+	
+		System.out.println("Total Count Of Different Numbers Are Below :");
+		System.out.println("**********************************************");
+		System.out.println("Total Number of Positive Numbers are : "+countPositiv);
+		System.out.println("Total Number of Negative Numbers are : "+countNeg);
+		System.out.println("Total Number of Even Numbers are : "+countEven);
+		System.out.println("Total Number of Odd Numbers are : "+countOdd);
+		System.out.println("Total Number of Zero's are : "+countZeros);
+	}
+}
+
+public class ChkDiffTypeOfNo 
+{
+	public static void main(String[] args) 
+	{
+		int arraySize;
+		PrintAllDetailsOfNum obj = new PrintAllDetailsOfNum();
+		Scanner sc = new Scanner(System.in);
+		System.out.println("How Many Elements You Want To Enter");
+		arraySize = sc.nextInt();
+		if(arraySize < 0)
+		{
+			System.out.println("Enter Postive Array Size");
+		}
+		else
+		{
+			obj.printDetailOfNum(arraySize);
+		}
+	}
+}
+----------------------------------------------------------------------------------------------------------------------
+OutPut -->
+How Many Elements You Want To Enter
+20
+Enter [0]th Array Element: 1
+Enter [1]th Array Element: 2
+Enter [2]th Array Element: 3
+Enter [3]th Array Element: 0
+Enter [4]th Array Element: 2
+Enter [5]th Array Element: 4
+Enter [6]th Array Element: -1
+Enter [7]th Array Element: -4
+Enter [8]th Array Element: -6
+Enter [9]th Array Element: 3
+Enter [10]th Array Element: 0
+Enter [11]th Array Element: 5
+Enter [12]th Array Element: -1
+Enter [13]th Array Element: 4
+Enter [14]th Array Element: 8
+Enter [15]th Array Element: 7
+Enter [16]th Array Element: 5
+Enter [17]th Array Element: -7
+Enter [18]th Array Element: 0
+Enter [19]th Array Element: 3
+Entered Elements are : 
+[1, 2, 3, 0, 2, 4, -1, -4, -6, 3, 0, 5, -1, 4, 8, 7, 5, -7, 0, 3]
+
+
+Positive Numbers Found In An Array are : [1,2,3,2,4,3,5,4,8,7,5,3,]
+
+
+Negative Numbers Found In An Array are : [-1,-4,-6,-1,-7,]
+
+
+Even Numbers Found In An Array are : [2,0,2,4,-4,-6,0,4,8,0,]
+
+
+Odd Numbers Found In An Array are : [1,3,-1,3,5,-1,7,5,-7,3,]
+
+
+Zero's Found In An Array are : [0,0,0,]
+
+
+Total Count Of Different Numbers Are Below :
+**********************************************
+Total Number of Positive Numbers are : 12
+Total Number of Negative Numbers are : 5
+Total Number of Even Numbers are : 10
+Total Number of Odd Numbers are : 10
+Total Number of Zero's are : 3
+
