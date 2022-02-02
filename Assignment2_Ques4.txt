@@ -1,0 +1,76 @@
+Question 4:
+ - Write a Java program to count the even and odd numbers in the given array.
+----------------------------------------------------------------------------------------------------------------------
+Ans-->
+package assignment2Ques4;
+import java.util.Scanner;
+
+class PrintEvenOddCount
+{
+	public void displayEvenOddCount(int arraySize)
+	{
+		int i;
+		int countEven = 0,countOdd = 0;
+		boolean flag = false;
+		Scanner sc = new Scanner(System.in);
+		int arrayElemets[] = new int[arraySize];
+		for(i = 0;i < arraySize;i++)
+		{
+			System.out.print("Enter ["+i+"]th Array Elements :");
+			arrayElemets[i] = sc.nextInt();
+		}
+		for(i = 0;i < arraySize;i++)
+		{
+			if(arrayElemets[i] % 2 == 0)
+			{
+				countEven++;
+			}
+			if(arrayElemets[i] % 2 != 0)
+			{
+				countOdd++;
+			}
+		}
+		System.out.println("\n");
+		System.out.println("Count of Even Numbers Element of an Array is : "+countEven);
+		System.out.println("Count of Odd Numbers Element of an Array is : "+countOdd);
+	}
+}
+
+public class CountOfEvenOddNum 
+{
+	public static void main(String[] args)
+	{
+		int arraySize;
+		PrintEvenOddCount obj = new PrintEvenOddCount();
+		Scanner sc = new Scanner(System.in);
+		System.out.println("How Many Elements You Want To Enter");
+		arraySize = sc.nextInt();
+		if(arraySize < 0)
+		{
+			System.out.println("Enter Postive Array Size");
+		}
+		else
+		{
+			obj.displayEvenOddCount(arraySize);
+		}
+	}
+
+}
+----------------------------------------------------------------------------------------------------------------------
+Output -->
+How Many Elements You Want To Enter
+10
+Enter [0]th Array Elements :10
+Enter [1]th Array Elements :5
+Enter [2]th Array Elements :0
+Enter [3]th Array Elements :4
+Enter [4]th Array Elements :7
+Enter [5]th Array Elements :8
+Enter [6]th Array Elements :9
+Enter [7]th Array Elements :2
+Enter [8]th Array Elements :3
+Enter [9]th Array Elements :2
+
+
+Count of Even Numbers Element of an Array is : 6
+Count of Odd Numbers Element of an Array is : 4
