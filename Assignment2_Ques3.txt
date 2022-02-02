@@ -1,0 +1,99 @@
+Question 3: Follow naming convention rule
+ - Write a program to check if elements of an array are same or not it read from front or back. E.g.
+   int[] a = {2,3,15,15,3,2};
+----------------------------------------------------------------------------------------------------------------------
+Ans-->
+package assignment2Ques3;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class ArrayElemntsSameOrNot {
+
+	public static void main(String[] args) 
+	{
+		
+	 boolean flag = false;
+	 int arraySize;
+     Scanner sc = new Scanner(System.in);
+     System.out.println("Enter Array Elements :");
+     arraySize = sc.nextInt();
+     
+     int arrayElemnts[] = new int[arraySize];
+     int revArrayElemnts[] = new int[arraySize];
+     
+     for (int i = 0; i < arrayElemnts.length; i++) 
+     {
+    	System.out.print("Enter ["+i+"]th Array Elements :");
+    	 arrayElemnts[i]=sc.nextInt();
+     }
+    
+    System.out.println("\n");
+    System.out.println("Inserted Elements are :");
+    System.out.println(Arrays.toString(arrayElemnts));
+    
+    int j=arrayElemnts.length-1;
+     for (int i = 0; i <arrayElemnts.length; i++,j--)
+     {
+    	 revArrayElemnts[j]=arrayElemnts[i];
+  	
+      }
+
+     for (int i = 0; i <=revArrayElemnts.length-1; i++)
+     {  
+    	 if(arrayElemnts[i]==revArrayElemnts[i])
+    	 {
+		  flag =true;
+    	 }
+    	 else
+    	 {
+    		 flag = false;
+    	 }
+     }
+     if(flag==true)
+     {
+    	 System.out.println("All Elements Same as Reverse Elements of an Array");
+     }
+     else 
+     {
+    	 System.out.println("All Elements Not Same as Reverse Elements of an Array");
+     }
+     
+    System.out.println(Arrays.toString(arrayElemnts));
+
+	}
+
+}
+----------------------------------------------------------------------------------------------------------------------
+Output -->
+i]Output Of Reverse Elements are not same 
+Enter Array Elements :
+7
+Enter [0]th Array Elements :1
+Enter [1]th Array Elements :2
+Enter [2]th Array Elements :3
+Enter [3]th Array Elements :1
+Enter [4]th Array Elements :2
+Enter [5]th Array Elements :3
+Enter [6]th Array Elements :5
+
+
+Inserted Elements are :
+[1, 2, 3, 1, 2, 3, 5]
+All Elements Not Same as Reverse Elements of an Array
+[1, 2, 3, 1, 2, 3, 5]
+
+ii]Output Of Reverse Elements are same
+Enter Array Elements :
+5
+Enter [0]th Array Elements :1
+Enter [1]th Array Elements :2
+Enter [2]th Array Elements :3
+Enter [3]th Array Elements :2
+Enter [4]th Array Elements :1
+
+
+Inserted Elements are :
+[1, 2, 3, 2, 1]
+All Elements Same as Reverse Elements of an Array
+[1, 2, 3, 2, 1]
